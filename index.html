@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Khairul Aziz - Portofolio</title>
+  <style>
+    :root {
+      --bg-gradient: linear-gradient(to right, #f7cac9, #92a8d1);
+      --text: #2e2e2e;
+      --card-bg: rgba(255, 255, 255, 0.85);
+      --accent: #aa88ff;
+      --dark-bg: #121212;
+      --dark-text: #f1f1f1;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: var(--bg-gradient);
+      background-attachment: fixed;
+      color: var(--text);
+      transition: background 0.4s, color 0.4s;
+    }
+
+    body.dark {
+      background: var(--dark-bg);
+      color: var(--dark-text);
+    }
+
+    header {
+      padding: 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .logo img {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+
+    .logo h1 {
+      margin: 0;
+      font-size: 1.8rem;
+      color: var(--accent);
+    }
+
+    nav a {
+      margin-left: 2rem;
+      text-decoration: none;
+      color: var(--text);
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      color: var(--accent);
+    }
+
+    .dark-toggle {
+      background: white;
+      border: none;
+      padding: 0.5rem 1rem;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: auto;
+      padding: 2rem 1rem;
+    }
+
+    .section-title {
+      font-size: 2rem;
+      color: var(--accent);
+      margin-bottom: 1.5rem;
+    }
+
+    .slider {
+      display: flex;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      gap: 1rem;
+    }
+
+    .slider img {
+      width: 100%;
+      max-width: 300px;
+      scroll-snap-align: center;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    }
+
+    .portfolio-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .portfolio-item {
+      background: var(--card-bg);
+      padding: 1rem;
+      border-radius: 10px;
+      text-align: center;
+    }
+
+    .portfolio-item img {
+      width: 100%;
+      border-radius: 10px;
+      margin-bottom: 0.5rem;
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem 1rem;
+      color: #fff;
+      background: rgba(0, 0, 0, 0.4);
+    }
+
+    @media (max-width: 768px) {
+      nav {
+        margin-top: 1rem;
+      }
+      nav a {
+        display: inline-block;
+        margin: 0.5rem 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <img src="https://via.placeholder.com/100" alt="Foto Profil" />
+      <h1>Khairul Aziz</h1>
+    </div>
+    <nav>
+      <a href="#beranda">Beranda</a>
+      <a href="#tentang">Tentang</a>
+      <a href="#karya">Karya</a>
+      <a href="#portofolio">Portofolio</a>
+      <a href="#kontak">Kontak</a>
+      <button class="dark-toggle" onclick="toggleDarkMode()">🌓</button>
+    </nav>
+  </header>
+
+  <div class="container">
+    <section id="beranda">
+      <h2 class="section-title">Selamat Datang</h2>
+      <p>Ini adalah blog pribadi Khairul Aziz. Berisi cerita, karya, dan inspirasi sepanjang perjalanan belajar dan berkarya.</p>
+    </section>
+
+    <section id="tentang">
+      <h2 class="section-title">Tentang Saya</h2>
+      <p>Saya Khairul Aziz, pelajar yang menyukai dunia teknologi, desain, dan pengembangan diri. Saya membuat blog ini sebagai tempat berbagi dan menampilkan hasil belajar dan eksplorasi saya.</p>
+    </section>
+
+    <section id="karya">
+      <h2 class="section-title">Slider Karya</h2>
+      <div class="slider">
+        <img src="https://via.placeholder.com/300x200" alt="Karya 1">
+        <img src="https://via.placeholder.com/300x200" alt="Karya 2">
+        <img src="https://via.placeholder.com/300x200" alt="Karya 3">
+      </div>
+    </section>
+
+    <section id="portofolio">
+      <h2 class="section-title">Portofolio Khusus</h2>
+      <div class="portfolio-grid">
+        <div class="portfolio-item">
+          <img src="https://via.placeholder.com/300x200" alt="Portofolio 1">
+          <p>Desain Poster Pendidikan</p>
+        </div>
+        <div class="portfolio-item">
+          <img src="https://via.placeholder.com/300x200" alt="Portofolio 2">
+          <p>UI/UX App Design</p>
+        </div>
+        <div class="portfolio-item">
+          <img src="https://via.placeholder.com/300x200" alt="Portofolio 3">
+          <p>Artikel Motivasi Remaja</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="kontak">
+      <h2 class="section-title">Kontak</h2>
+      <form action="https://formsubmit.co/youremail@gmail.com" method="POST">
+        <input type="text" name="nama" placeholder="Nama Kamu" required><br>
+        <input type="email" name="email" placeholder="Email Kamu" required><br>
+        <textarea name="pesan" rows="4" placeholder="Pesan kamu..." required></textarea><br>
+        <button type="submit">Kirim Pesan</button>
+      </form>
+    </section>
+  </div>
+
+  <footer>
+    <p>© 2025 Khairul Aziz — Portofolio Pribadi</p>
+  </footer>
+
+  <script>
+    function toggleDarkMode() {
+      document.body.classList.toggle("dark");
+    }
+  </script>
+</body>
+</html>
